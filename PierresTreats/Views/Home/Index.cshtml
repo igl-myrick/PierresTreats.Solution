@@ -1,0 +1,50 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.Models;
+
+<div class="container">
+  <div class="row">
+    <h1 class="text-center my3">Pierre's Treats</h1>
+    <div class="col-md-4">
+      <div id="treats-wrapper" class="border rounded p-2">
+        <h4>Treats</h4>
+        @if (Model["treats"].Length == 0)
+        {
+          <p>No treats have been added yet.</p>
+        }
+        <ul>
+          @foreach  (Treat treat in Model["treats"])
+          {
+            <li>@Html.ActionLink(treat.Name, "Details", "Treats", new {id = treat.TreatId })</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div id="flavors-wrapper" class="border rounded p-2">
+        <h4>Flavors</h4>
+        @if (Model["flavors"].Length == 0)
+        {
+          <p>No flavors have been added yet.</p>
+        }
+        <ul>
+          @foreach (Flavor flavor in Model["flavors"])
+          {
+            <li>@Html.ActionLink(flavor.Name, "Details", "Flavors", new { id = flavor.FlavorId })</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div id="links-wrapper" class="border rounded p-2">
+        <p>@Html.ActionLink("View all treats", "Index", "Treats")</p>
+        <p>@Html.ActionLink("View all flavors", "Index", "Flavors")</p>
+        <p>@Html.ActionLink("Create or manage an account", "Index", "Account")</p>
+      </div>
+    </div>
+  </div>
+</div>
