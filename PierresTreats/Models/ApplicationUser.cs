@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace PierresTreats.Models
 {
-  public class ApplicationUser
+  public class ApplicationUser : IdentityUser
   {
-    
+
   }
 }
