@@ -3,9 +3,9 @@
 }
 
 @using PierresTreats.Models;
-@model PierresTreats.Models.Flavor
+@model PierresTreats.Models.Treat
 
-<h2>Flavor Details</h2>
+<h2>Treat Details</h2>
 <hr>
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
@@ -29,7 +29,7 @@ else
   </ul>
 }
 
-<p>@Html.ActionLink("Add a flavor", "AddFlavor", new { id = Model.FlavorId })</p>
-<p>@Html.ActionLink("Edit treat", "Edit", new { id = Model.FlavorId })</p>
-<p>@Html.ActionLink("Delete treat", "Delete", new { id = Model.FlavorId })</p>
+<p>@Html.ActionLink("Add a flavor", "AddFlavor", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Edit treat", "Edit", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Delete treat", "Delete", new { id = Model.TreatId })</p>
 <p>@Html.ActionLink("Back to treats list", "Index")</p>
