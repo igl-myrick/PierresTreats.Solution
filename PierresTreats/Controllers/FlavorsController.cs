@@ -20,5 +20,14 @@ namespace PierresTreats.Controllers
     {
       return View(_db.Flavors.ToList());
     }
+
+    public ActionResult Details(int id)
+    {
+      Flavor thisFlavor = _db.Flavors
+        .Include(flavor => flavor.JoinEntities)
+        .ThenInclude(join => join.Treat)
+        .FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
+    }
   }
 }
